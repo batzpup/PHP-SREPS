@@ -1,22 +1,22 @@
 public class SalesItem {
     private string id;
     private int quantity;
-    public void SalesItem(string id, int quantity) {
-        id = id;
-        quantity = quantity;
+    public void SalesItem(string newId, int newQuantity) {
+        id = newId;
+        quantity = newQuantity;
     }
 
     public string getId() {
         return id;
     }
-    public void setId(string id) {
-        id = id;
+    public void setId(string newId) {
+        id = newId;
     }
 
     public int getQuantity() {
         return quantity;
     }
-    public void setQuantity() {
-        quantity=quantity;
+    public void setQuantity(int newQuantity) {
+        quantity = newQuantity;
     }
 }
