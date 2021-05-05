@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="phpdatabaseDataSet" targetNamespace="http://tempuri.org/phpdatabaseDataSet.xsd" xmlns:mstns="http://tempuri.org/phpdatabaseDataSet.xsd" xmlns="http://tempuri.org/phpdatabaseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="phpdatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="phpdatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PHP_SRS_App.Properties.Settings.GlobalReference.Default.phpdatabaseConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sales_tableTableAdapter" GeneratorDataComponentClassName="sales_tableTableAdapter" Name="sales_table" UserDataComponentName="sales_tableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="phpdatabaseConnectionString (Settings)" DbObjectName="phpdatabase.sales_table" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Order_Number`, `Product_ID`, `Datetime`, `Quantity` FROM `sales_table`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="phpdatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="phpdatabaseDataSet" msprop:Generator_UserDSName="phpdatabaseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sales_table" msprop:Generator_TableClassName="sales_tableDataTable" msprop:Generator_TableVarName="tablesales_table" msprop:Generator_TablePropName="sales_table" msprop:Generator_RowDeletingName="sales_tableRowDeleting" msprop:Generator_RowChangingName="sales_tableRowChanging" msprop:Generator_RowEvHandlerName="sales_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="sales_tableRowDeleted" msprop:Generator_UserTableName="sales_table" msprop:Generator_RowChangedName="sales_tableRowChanged" msprop:Generator_RowEvArgName="sales_tableRowChangeEvent" msprop:Generator_RowClassName="sales_tableRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
