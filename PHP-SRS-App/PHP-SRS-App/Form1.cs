@@ -19,7 +19,7 @@ namespace PHP_SRS_App
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +72,42 @@ namespace PHP_SRS_App
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            
+            
+            switch (product_cbx.Text)
+            {
+
+                case "Shampoo":
+                    AddMsgToBoard();
+                    break;
+                case "Painkillers":
+                    AddMsgToBoard();
+                    break;
+                case "Masks":
+                    AddMsgToBoard();
+                    break;
+                case "Vitamins":
+                    AddMsgToBoard();
+                    break;
+                default:
+                    Console.WriteLine("Please select a valid product");
+                    break;
+            }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void AddMsgToBoard()
+        {
+            rTextBox.Text += '\n';
+            rTextBox.Text += product_cbx.Text + ' ' + quantity_msktxtbx.Text;
         }
     }
 }
