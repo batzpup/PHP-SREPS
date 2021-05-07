@@ -20,9 +20,9 @@ namespace PHP_SRS_App {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("sql6410796DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("sql6410796DataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class sql6410796DataSet : global::System.Data.DataSet {
+    public partial class sql6410796DataSet1 : global::System.Data.DataSet {
         
         private sales_tableDataTable tablesales_table;
         
@@ -30,7 +30,7 @@ namespace PHP_SRS_App {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public sql6410796DataSet() {
+        public sql6410796DataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace PHP_SRS_App {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected sql6410796DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected sql6410796DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace PHP_SRS_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            sql6410796DataSet cln = ((sql6410796DataSet)(base.Clone()));
+            sql6410796DataSet1 cln = ((sql6410796DataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace PHP_SRS_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "sql6410796DataSet";
+            this.DataSetName = "sql6410796DataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/sql6410796DataSet.xsd";
+            this.Namespace = "http://tempuri.org/sql6410796DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablesales_table = new sales_tableDataTable();
@@ -225,7 +225,7 @@ namespace PHP_SRS_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            sql6410796DataSet ds = new sql6410796DataSet();
+            sql6410796DataSet1 ds = new sql6410796DataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -520,7 +520,7 @@ namespace PHP_SRS_App {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                sql6410796DataSet ds = new sql6410796DataSet();
+                sql6410796DataSet1 ds = new sql6410796DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -673,7 +673,7 @@ namespace PHP_SRS_App {
         }
     }
 }
-namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
+namespace PHP_SRS_App.sql6410796DataSet1TableAdapters {
     
     
     /// <summary>
@@ -953,7 +953,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sql6410796DataSet.sales_tableDataTable dataTable) {
+        public virtual int Fill(sql6410796DataSet1.sales_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -966,9 +966,9 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sql6410796DataSet.sales_tableDataTable GetData() {
+        public virtual sql6410796DataSet1.sales_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            sql6410796DataSet.sales_tableDataTable dataTable = new sql6410796DataSet.sales_tableDataTable();
+            sql6410796DataSet1.sales_tableDataTable dataTable = new sql6410796DataSet1.sales_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -976,14 +976,14 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sql6410796DataSet.sales_tableDataTable dataTable) {
+        public virtual int Update(sql6410796DataSet1.sales_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sql6410796DataSet dataSet) {
+        public virtual int Update(sql6410796DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "sales_table");
         }
         
@@ -1179,7 +1179,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(sql6410796DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._sales_tableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1198,7 +1198,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(sql6410796DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._sales_tableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1216,7 +1216,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(sql6410796DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._sales_tableTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1258,7 +1258,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(sql6410796DataSet dataSet) {
+        public virtual int UpdateAll(sql6410796DataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

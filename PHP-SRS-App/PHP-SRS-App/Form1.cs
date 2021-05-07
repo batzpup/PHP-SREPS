@@ -24,13 +24,14 @@ namespace PHP_SRS_App
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'phpdatabaseDataSet11.sales_table' table. You can move, or remove it, as needed.
-            this.sales_tableTableAdapter.Fill(this.phpdatabaseDataSet11.sales_table);
+            // TODO: This line of code loads data into the 'sql6410796DataSet.sales_table' table. You can move, or remove it, as needed.
+            this.sales_tableTableAdapter.Fill(this.sql6410796DataSet.sales_table);
+            
 
         }
 

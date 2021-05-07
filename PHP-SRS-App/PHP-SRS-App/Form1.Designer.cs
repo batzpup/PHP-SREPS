@@ -41,22 +41,20 @@ namespace PHP_SRS_App
             this.SalesOrder_pnl = new System.Windows.Forms.Panel();
             this.editsale_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.salestableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phpdatabaseDataSet11 = new PHP_SRS_App.phpdatabaseDataSet1();
-            this.phpdatabaseDataSet1 = new PHP_SRS_App.phpdatabaseDataSet();
-            this.sales_tableTableAdapter = new PHP_SRS_App.phpdatabaseDataSet1TableAdapters.sales_tableTableAdapter();
             this.rTextBox = new System.Windows.Forms.RichTextBox();
             this.sql6410796DataSet = new PHP_SRS_App.sql6410796DataSet();
-            this.sql6410796DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salestableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sales_tableTableAdapter = new PHP_SRS_App.sql6410796DataSetTableAdapters.sales_tableTableAdapter();
+            this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datetimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.product__imgbx)).BeginInit();
             this.panel1.SuspendLayout();
             this.SalesOrder_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salestableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phpdatabaseDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phpdatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sql6410796DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sql6410796DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salestableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sale_btn
@@ -173,31 +171,17 @@ namespace PHP_SRS_App
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.sql6410796DataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 9);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderNumberDataGridViewTextBoxColumn,
+            this.productIDDataGridViewTextBoxColumn,
+            this.datetimeDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.salestableBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 9);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 377);
+            this.dataGridView1.Size = new System.Drawing.Size(442, 383);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // salestableBindingSource
-            // 
-            this.salestableBindingSource.DataMember = "sales_table";
-            this.salestableBindingSource.DataSource = this.phpdatabaseDataSet11;
-            // 
-            // phpdatabaseDataSet11
-            // 
-            this.phpdatabaseDataSet11.DataSetName = "phpdatabaseDataSet1";
-            this.phpdatabaseDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phpdatabaseDataSet1
-            // 
-            this.phpdatabaseDataSet1.DataSetName = "phpdatabaseDataSet";
-            this.phpdatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sales_tableTableAdapter
-            // 
-            this.sales_tableTableAdapter.ClearBeforeFill = true;
             // 
             // rTextBox
             // 
@@ -215,10 +199,38 @@ namespace PHP_SRS_App
             this.sql6410796DataSet.DataSetName = "sql6410796DataSet";
             this.sql6410796DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sql6410796DataSetBindingSource
+            // salestableBindingSource
             // 
-            this.sql6410796DataSetBindingSource.DataSource = this.sql6410796DataSet;
-            this.sql6410796DataSetBindingSource.Position = 0;
+            this.salestableBindingSource.DataMember = "sales_table";
+            this.salestableBindingSource.DataSource = this.sql6410796DataSet;
+            // 
+            // sales_tableTableAdapter
+            // 
+            this.sales_tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // orderNumberDataGridViewTextBoxColumn
+            // 
+            this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "Order_Number";
+            this.orderNumberDataGridViewTextBoxColumn.HeaderText = "Order_Number";
+            this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            // 
+            // datetimeDataGridViewTextBoxColumn
+            // 
+            this.datetimeDataGridViewTextBoxColumn.DataPropertyName = "Datetime";
+            this.datetimeDataGridViewTextBoxColumn.HeaderText = "Datetime";
+            this.datetimeDataGridViewTextBoxColumn.Name = "datetimeDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -240,11 +252,8 @@ namespace PHP_SRS_App
             this.panel1.PerformLayout();
             this.SalesOrder_pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salestableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phpdatabaseDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phpdatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sql6410796DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sql6410796DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salestableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,14 +271,15 @@ namespace PHP_SRS_App
         private System.Windows.Forms.Label quantity_lbl;
         private System.Windows.Forms.Panel SalesOrder_pnl;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private phpdatabaseDataSet phpdatabaseDataSet1;
-        private phpdatabaseDataSet1 phpdatabaseDataSet11;
-        private System.Windows.Forms.BindingSource salestableBindingSource;
-        private phpdatabaseDataSet1TableAdapters.sales_tableTableAdapter sales_tableTableAdapter;
         private System.Windows.Forms.Button editsale_btn;
         private System.Windows.Forms.RichTextBox rTextBox;
-        private System.Windows.Forms.BindingSource sql6410796DataSetBindingSource;
         private sql6410796DataSet sql6410796DataSet;
+        private System.Windows.Forms.BindingSource salestableBindingSource;
+        private sql6410796DataSetTableAdapters.sales_tableTableAdapter sales_tableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datetimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }
 

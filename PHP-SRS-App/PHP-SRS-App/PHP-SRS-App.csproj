@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sql6410796DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sql6410796DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +140,17 @@
     </None>
     <None Include="sql6410796DataSet.xss">
       <DependentUpon>sql6410796DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sql6410796DataSet1.xsc">
+      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sql6410796DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sql6410796DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sql6410796DataSet1.xss">
+      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
