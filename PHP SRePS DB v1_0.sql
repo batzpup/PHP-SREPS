@@ -1,16 +1,16 @@
 -- PHP SRePS
--- Database version 1.0
+-- Database version 1.1
 -- Andy King
--- 05/05/2021 0930
+-- 09/05/2021 2125
 
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.7.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 05, 2021 at 09:29 AM
--- Server version: 10.2.37-MariaDB
--- PHP Version: 7.3.27
+-- Host: sql6.freemysqlhosting.net
+-- Generation Time: May 09, 2021 at 11:24 AM
+-- Server version: 5.5.62-0ubuntu0.14.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -24,8 +24,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wcweb_andy_mitp`
+-- Database: `sql6410796`
 --
+CREATE DATABASE IF NOT EXISTS `sql6410796` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sql6410796`;
 
 -- --------------------------------------------------------
 
@@ -44,8 +46,8 @@ CREATE TABLE `products_table` (
 --
 
 INSERT INTO `products_table` (`Product_ID`, `Product_Name`, `Cost`) VALUES
-(1, 'Tissues (3 ply, 224 sheets)', 1.99),
-(2, 'Sensodyne Sensitive Teeth Pain Repair & Protect Whitening Toothpaste 100g', 10.75);
+(1, 'Tissues (3 ply, 224 sheets)', '1.99'),
+(2, 'Sensodyne Sensitive Teeth Pain Repair & Protect Whitening Toothpaste 100g', '10.75');
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,7 @@ INSERT INTO `products_table` (`Product_ID`, `Product_Name`, `Cost`) VALUES
 CREATE TABLE `sales_table` (
   `Order_Number` int(10) NOT NULL,
   `Product_ID` int(6) NOT NULL,
-  `Datetime` datetime(6) NOT NULL,
+  `Datetime` datetime NOT NULL,
   `Quantity` int(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -65,10 +67,10 @@ CREATE TABLE `sales_table` (
 --
 
 INSERT INTO `sales_table` (`Order_Number`, `Product_ID`, `Datetime`, `Quantity`) VALUES
-(1, 1, '2021-05-03 16:11:19.000000', 2),
-(1, 2, '2021-05-03 16:11:19.000000', 1),
-(2, 1, '2021-05-03 16:16:09.000000', 5),
-(4, 9, '2021-05-03 16:22:34.000000', 9);
+(1, 1, '2021-05-03 16:11:19', 2),
+(1, 2, '2021-05-03 16:11:19', 1),
+(2, 1, '2021-05-03 16:16:09', 5),
+(3, 2, '2021-05-03 16:22:34', 4);
 
 --
 -- Indexes for dumped tables
@@ -95,13 +97,11 @@ ALTER TABLE `sales_table`
 --
 ALTER TABLE `products_table`
   MODIFY `Product_ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `sales_table`
 --
 ALTER TABLE `sales_table`
-  MODIFY `Order_Number` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
+  MODIFY `Order_Number` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
