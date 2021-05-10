@@ -87,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sql6410796DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="phpdatabaseDataSet.xsc">
       <DependentUpon>phpdatabaseDataSet.xsd</DependentUpon>
@@ -152,9 +158,26 @@
     <None Include="sql6410796DataSet1.xss">
       <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="sql6410796DataSet2.xsc">
+      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sql6410796DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sql6410796DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sql6410796DataSet2.xss">
+      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sensodyne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tissues.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

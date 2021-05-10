@@ -44,5 +44,16 @@ namespace PHP_SRS_App.Properties {
                 return ((string)(this["sql6410796ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=sql6.freemysqlhosting.net;user id=sql6410796;password=7IDwjMhNCw;database=" +
+            "sql6410796;persistsecurityinfo=True;port=3306")]
+        public string sql6410796ConnectionString1 {
+            get {
+                return ((string)(this["sql6410796ConnectionString1"]));
+            }
+        }
     }
 }
