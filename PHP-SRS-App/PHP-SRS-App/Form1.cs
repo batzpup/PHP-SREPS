@@ -7,17 +7,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
+
+
 
 namespace PHP_SRS_App
 {
     public partial class Form1 : Form
     {
-        string connectionString = "sql6.freemysqlhosting.net;user id = sql6410796; database=sql6410796;persistsecurityinfo=True";
+        //"server=sql6.freemysqlhosting.net; user id = sql6410796; password=7IDwjMhNCw;database=sql6410796;persistsecurityinfo=True;";
+        string unbuiltString = "server=localhost;user id=root;persistsecurityinfo=True;database=phpdatabase";
+        string connectionString = "Server=sql6.freemysqlhosting.net,3306;User id = sql6410796; database=sql6410796; Password=7IDwjMhNCw;Convert Zero Datetime=True;";
+
+
         public Form1()
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sql6410796DataSet.products_table' table. You can move, or remove it, as needed.
+            this.products_tableTableAdapter.Fill(this.sql6410796DataSet.products_table);
 
+            // SqlConnectionStringBuilder builder =new SqlConnectionStringBuilder(unbuiltString);
+            // connectionString = builder.ConnectionString;
+            //Console.WriteLine(connectionString);
+            PopulateDataGridView();
+
+
+        }
+        void PopulateDataGridView()
+        {
+            using (MySql.Data.MySqlClient.MySqlConnection sqlCon = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            { 
+                sqlCon.Open();
+                Console.WriteLine("hello i connected");
+                MySql.Data.MySqlClient.MySqlDataAdapter sqlDa = new MySql.Data.MySqlClient.MySqlDataAdapter("SELECT * FROM sales_table", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                dgvSalesRecord.DataSource = dtbl;
+            }
+        }
+
+        private void dgvSalesRecord_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("ive changed a cell sucessfully");
+            if (dgvSalesRecord.CurrentRow != null)
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    DataGridViewRow dgvRow = dgvSalesRecord.CurrentRow;
+                    SqlCommand sqlCmd = new SqlCommand("SalesEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    //update
+                    sqlCmd.Parameters.AddWithValue("@Order_Number", Convert.ToInt32(dgvRow.Cells["Order_Number"].Value));
+                    sqlCmd.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(dgvRow.Cells["Product_ID"].Value));
+                    sqlCmd.Parameters.AddWithValue("@Datetime", Convert.ToDateTime(dgvRow.Cells["Datetime"].Value));
+                    sqlCmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(dgvRow.Cells["Quantity"].Value));
+                    sqlCmd.ExecuteNonQuery();
+                    PopulateDataGridView();
+                }
+            }
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (product_cbx.Text.ToLower())
@@ -30,6 +84,7 @@ namespace PHP_SRS_App
                     product__imgbx.Image = PHP_SRS_App.Properties.Resources.tissues;
                     break;
                 default:
+                    Console.WriteLine("ChangedComboBox");
                     MessageBox.Show("Please select a valid product");
                     break;
             }
@@ -40,15 +95,7 @@ namespace PHP_SRS_App
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'sql6410796DataSet2.products_table' table. You can move, or remove it, as needed.
-            this.products_tableTableAdapter.Fill(this.sql6410796DataSet2.products_table);
-            // TODO: This line of code loads data into the 'sql6410796DataSet.sales_table' table. You can move, or remove it, as needed.
-            this.sales_tableTableAdapter.Fill(this.sql6410796DataSet.sales_table);
-            
-
-        }
+     
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -77,7 +124,32 @@ namespace PHP_SRS_App
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (MySql.Data.MySqlClient.MySqlConnection sqlCon = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+                {
+                    MySqlDataReader MyReader;
+    
+                    string query = "insert into sales_table(Product_ID,Datetime,Quantity) " +
+                        "values(1, NOW()," + this.quantity_msktxtbx.Text + ");";
 
+                    MySqlCommand MyCommand2 = new MySqlCommand(query, sqlCon);
+                    
+                    sqlCon.Open();
+                    MyReader = MyCommand2.ExecuteReader();  // Here our query will be executed and data saved into the database.  
+                    MessageBox.Show("Save Data");
+                    while (MyReader.Read())
+                    {
+                    }
+                    sqlCon.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            PopulateDataGridView();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -92,12 +164,9 @@ namespace PHP_SRS_App
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-
-
             if (product_cbx.Text == "" || quantity_msktxtbx.Text == "" || quantity_msktxtbx.Text == "0")
             {
                 MessageBox.Show("Please select a valid product and quantity");
-
                 return;
             }
             else
@@ -107,8 +176,7 @@ namespace PHP_SRS_App
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+        { 
         }
         
         private void AddMsgToBoard()

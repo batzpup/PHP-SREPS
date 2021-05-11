@@ -24,7 +24,7 @@ namespace PHP_SRS_App {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class sql6410796DataSet : global::System.Data.DataSet {
         
-        private sales_tableDataTable tablesales_table;
+        private products_tableDataTable tableproducts_table;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace PHP_SRS_App {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["sales_table"] != null)) {
-                    base.Tables.Add(new sales_tableDataTable(ds.Tables["sales_table"]));
+                if ((ds.Tables["products_table"] != null)) {
+                    base.Tables.Add(new products_tableDataTable(ds.Tables["products_table"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace PHP_SRS_App {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sales_tableDataTable sales_table {
+        public products_tableDataTable products_table {
             get {
-                return this.tablesales_table;
+                return this.tableproducts_table;
             }
         }
         
@@ -152,8 +152,8 @@ namespace PHP_SRS_App {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["sales_table"] != null)) {
-                    base.Tables.Add(new sales_tableDataTable(ds.Tables["sales_table"]));
+                if ((ds.Tables["products_table"] != null)) {
+                    base.Tables.Add(new products_tableDataTable(ds.Tables["products_table"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace PHP_SRS_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablesales_table = ((sales_tableDataTable)(base.Tables["sales_table"]));
+            this.tableproducts_table = ((products_tableDataTable)(base.Tables["products_table"]));
             if ((initTable == true)) {
-                if ((this.tablesales_table != null)) {
-                    this.tablesales_table.InitVars();
+                if ((this.tableproducts_table != null)) {
+                    this.tableproducts_table.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace PHP_SRS_App {
             this.Namespace = "http://tempuri.org/sql6410796DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablesales_table = new sales_tableDataTable();
-            base.Tables.Add(this.tablesales_table);
+            this.tableproducts_table = new products_tableDataTable();
+            base.Tables.Add(this.tableproducts_table);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializesales_table() {
+        private bool ShouldSerializeproducts_table() {
             return false;
         }
         
@@ -270,27 +270,21 @@ namespace PHP_SRS_App {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void sales_tableRowChangeEventHandler(object sender, sales_tableRowChangeEvent e);
+        public delegate void products_tableRowChangeEventHandler(object sender, products_tableRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sales_tableDataTable : global::System.Data.TypedTableBase<sales_tableRow> {
+        public partial class products_tableDataTable : global::System.Data.TypedTableBase<products_tableRow> {
             
-            private global::System.Data.DataColumn columnOrder_Number;
-            
-            private global::System.Data.DataColumn columnProduct_ID;
-            
-            private global::System.Data.DataColumn columnDatetime;
-            
-            private global::System.Data.DataColumn columnQuantity;
+            private global::System.Data.DataColumn columnProduct_Name;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableDataTable() {
-                this.TableName = "sales_table";
+            public products_tableDataTable() {
+                this.TableName = "products_table";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +292,7 @@ namespace PHP_SRS_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal sales_tableDataTable(global::System.Data.DataTable table) {
+            internal products_tableDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +309,16 @@ namespace PHP_SRS_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected sales_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected products_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Order_NumberColumn {
+            public global::System.Data.DataColumn Product_NameColumn {
                 get {
-                    return this.columnOrder_Number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Product_IDColumn {
-                get {
-                    return this.columnProduct_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DatetimeColumn {
-                get {
-                    return this.columnDatetime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
+                    return this.columnProduct_Name;
                 }
             }
             
@@ -363,56 +333,45 @@ namespace PHP_SRS_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRow this[int index] {
+            public products_tableRow this[int index] {
                 get {
-                    return ((sales_tableRow)(this.Rows[index]));
+                    return ((products_tableRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sales_tableRowChangeEventHandler sales_tableRowChanging;
+            public event products_tableRowChangeEventHandler products_tableRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sales_tableRowChangeEventHandler sales_tableRowChanged;
+            public event products_tableRowChangeEventHandler products_tableRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sales_tableRowChangeEventHandler sales_tableRowDeleting;
+            public event products_tableRowChangeEventHandler products_tableRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sales_tableRowChangeEventHandler sales_tableRowDeleted;
+            public event products_tableRowChangeEventHandler products_tableRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addsales_tableRow(sales_tableRow row) {
+            public void Addproducts_tableRow(products_tableRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRow Addsales_tableRow(int Product_ID, System.DateTime Datetime, int Quantity) {
-                sales_tableRow rowsales_tableRow = ((sales_tableRow)(this.NewRow()));
+            public products_tableRow Addproducts_tableRow(string Product_Name) {
+                products_tableRow rowproducts_tableRow = ((products_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Product_ID,
-                        Datetime,
-                        Quantity};
-                rowsales_tableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsales_tableRow);
-                return rowsales_tableRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRow FindByOrder_NumberProduct_ID(int Order_Number, int Product_ID) {
-                return ((sales_tableRow)(this.Rows.Find(new object[] {
-                            Order_Number,
-                            Product_ID})));
+                        Product_Name};
+                rowproducts_tableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowproducts_tableRow);
+                return rowproducts_tableRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                sales_tableDataTable cln = ((sales_tableDataTable)(base.Clone()));
+                products_tableDataTable cln = ((products_tableDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -420,65 +379,48 @@ namespace PHP_SRS_App {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new sales_tableDataTable();
+                return new products_tableDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnOrder_Number = base.Columns["Order_Number"];
-                this.columnProduct_ID = base.Columns["Product_ID"];
-                this.columnDatetime = base.Columns["Datetime"];
-                this.columnQuantity = base.Columns["Quantity"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnOrder_Number = new global::System.Data.DataColumn("Order_Number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrder_Number);
-                this.columnProduct_ID = new global::System.Data.DataColumn("Product_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_ID);
-                this.columnDatetime = new global::System.Data.DataColumn("Datetime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatetime);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnOrder_Number,
-                                this.columnProduct_ID}, true));
-                this.columnOrder_Number.AutoIncrement = true;
-                this.columnOrder_Number.AutoIncrementSeed = -1;
-                this.columnOrder_Number.AutoIncrementStep = -1;
-                this.columnOrder_Number.AllowDBNull = false;
-                this.columnProduct_ID.AllowDBNull = false;
-                this.columnDatetime.AllowDBNull = false;
-                this.columnQuantity.AllowDBNull = false;
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProduct_Name);
+                this.columnProduct_Name.AllowDBNull = false;
+                this.columnProduct_Name.MaxLength = 65535;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRow Newsales_tableRow() {
-                return ((sales_tableRow)(this.NewRow()));
+            public products_tableRow Newproducts_tableRow() {
+                return ((products_tableRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sales_tableRow(builder);
+                return new products_tableRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(sales_tableRow);
+                return typeof(products_tableRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.sales_tableRowChanged != null)) {
-                    this.sales_tableRowChanged(this, new sales_tableRowChangeEvent(((sales_tableRow)(e.Row)), e.Action));
+                if ((this.products_tableRowChanged != null)) {
+                    this.products_tableRowChanged(this, new products_tableRowChangeEvent(((products_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,8 +428,8 @@ namespace PHP_SRS_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.sales_tableRowChanging != null)) {
-                    this.sales_tableRowChanging(this, new sales_tableRowChangeEvent(((sales_tableRow)(e.Row)), e.Action));
+                if ((this.products_tableRowChanging != null)) {
+                    this.products_tableRowChanging(this, new products_tableRowChangeEvent(((products_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -495,8 +437,8 @@ namespace PHP_SRS_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.sales_tableRowDeleted != null)) {
-                    this.sales_tableRowDeleted(this, new sales_tableRowChangeEvent(((sales_tableRow)(e.Row)), e.Action));
+                if ((this.products_tableRowDeleted != null)) {
+                    this.products_tableRowDeleted(this, new products_tableRowChangeEvent(((products_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -504,14 +446,14 @@ namespace PHP_SRS_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.sales_tableRowDeleting != null)) {
-                    this.sales_tableRowDeleting(this, new sales_tableRowChangeEvent(((sales_tableRow)(e.Row)), e.Action));
+                if ((this.products_tableRowDeleting != null)) {
+                    this.products_tableRowDeleting(this, new products_tableRowChangeEvent(((products_tableRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removesales_tableRow(sales_tableRow row) {
+            public void Removeproducts_tableRow(products_tableRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -538,7 +480,7 @@ namespace PHP_SRS_App {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sales_tableDataTable";
+                attribute2.FixedValue = "products_tableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -582,58 +524,25 @@ namespace PHP_SRS_App {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class sales_tableRow : global::System.Data.DataRow {
+        public partial class products_tableRow : global::System.Data.DataRow {
             
-            private sales_tableDataTable tablesales_table;
+            private products_tableDataTable tableproducts_table;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal sales_tableRow(global::System.Data.DataRowBuilder rb) : 
+            internal products_tableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablesales_table = ((sales_tableDataTable)(this.Table));
+                this.tableproducts_table = ((products_tableDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Order_Number {
+            public string Product_Name {
                 get {
-                    return ((int)(this[this.tablesales_table.Order_NumberColumn]));
+                    return ((string)(this[this.tableproducts_table.Product_NameColumn]));
                 }
                 set {
-                    this[this.tablesales_table.Order_NumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Product_ID {
-                get {
-                    return ((int)(this[this.tablesales_table.Product_IDColumn]));
-                }
-                set {
-                    this[this.tablesales_table.Product_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Datetime {
-                get {
-                    return ((global::System.DateTime)(this[this.tablesales_table.DatetimeColumn]));
-                }
-                set {
-                    this[this.tablesales_table.DatetimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Quantity {
-                get {
-                    return ((int)(this[this.tablesales_table.QuantityColumn]));
-                }
-                set {
-                    this[this.tablesales_table.QuantityColumn] = value;
+                    this[this.tableproducts_table.Product_NameColumn] = value;
                 }
             }
         }
@@ -642,22 +551,22 @@ namespace PHP_SRS_App {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class sales_tableRowChangeEvent : global::System.EventArgs {
+        public class products_tableRowChangeEvent : global::System.EventArgs {
             
-            private sales_tableRow eventRow;
+            private products_tableRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRowChangeEvent(sales_tableRow row, global::System.Data.DataRowAction action) {
+            public products_tableRowChangeEvent(products_tableRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_tableRow Row {
+            public products_tableRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -685,7 +594,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sales_tableTableAdapter : global::System.ComponentModel.Component {
+    public partial class products_tableTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
@@ -699,7 +608,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public sales_tableTableAdapter() {
+        public products_tableTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -796,147 +705,16 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sales_table";
-            tableMapping.ColumnMappings.Add("Order_Number", "Order_Number");
-            tableMapping.ColumnMappings.Add("Product_ID", "Product_ID");
-            tableMapping.ColumnMappings.Add("Datetime", "Datetime");
-            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.DataSetTable = "products_table";
+            tableMapping.ColumnMappings.Add("Product_Name", "Product_Name");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `sales_table` WHERE ((`Order_Number` = @p1) AND (`Product_ID` = @p2) " +
-                "AND (`Datetime` = @p3) AND (`Quantity` = @p4))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Order_Number";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Product_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "Datetime";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Quantity";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `sales_table` (`Product_ID`, `Datetime`, `Quantity`) VALUES (@p1, @p2" +
-                ", @p3)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Product_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "Datetime";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Quantity";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `sales_table` SET `Product_ID` = @p1, `Datetime` = @p2, `Quantity` = @p3 W" +
-                "HERE ((`Order_Number` = @p4) AND (`Product_ID` = @p5) AND (`Datetime` = @p6) AND" +
-                " (`Quantity` = @p7))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Product_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "Datetime";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Quantity";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Order_Number";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Product_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "Datetime";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Quantity";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::PHP_SRS_App.Properties.Settings.Default.sql6410796ConnectionString;
+            this._connection.ConnectionString = global::PHP_SRS_App.Properties.Settings.Default.sql6410796ConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -945,7 +723,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Order_Number`, `Product_ID`, `Datetime`, `Quantity` FROM `sales_table`";
+            this._commandCollection[0].CommandText = "SELECT `Product_Name` FROM `products_table`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -953,7 +731,7 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sql6410796DataSet.sales_tableDataTable dataTable) {
+        public virtual int Fill(sql6410796DataSet.products_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -966,125 +744,11 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sql6410796DataSet.sales_tableDataTable GetData() {
+        public virtual sql6410796DataSet.products_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            sql6410796DataSet.sales_tableDataTable dataTable = new sql6410796DataSet.sales_tableDataTable();
+            sql6410796DataSet.products_tableDataTable dataTable = new sql6410796DataSet.products_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sql6410796DataSet.sales_tableDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sql6410796DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "sales_table");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, System.DateTime p3, int p4) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(p4));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, System.DateTime p2, int p3) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, System.DateTime p2, int p3, int p4, int p5, System.DateTime p6, int p7) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime p2, int p3, int p4, int p5, System.DateTime p6, int p7) {
-            return this.Update(p5, p2, p3, p4, p5, p6, p7);
         }
     }
     
@@ -1100,8 +764,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private sales_tableTableAdapter _sales_tableTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1114,20 +776,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public sales_tableTableAdapter sales_tableTableAdapter {
-            get {
-                return this._sales_tableTableAdapter;
-            }
-            set {
-                this._sales_tableTableAdapter = value;
             }
         }
         
@@ -1150,10 +798,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._sales_tableTableAdapter != null) 
-                            && (this._sales_tableTableAdapter.Connection != null))) {
-                    return this._sales_tableTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1167,9 +811,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._sales_tableTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1181,15 +822,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sales_tableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sales_tableTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1200,14 +832,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sales_tableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sales_tableTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1218,14 +842,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(sql6410796DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sales_tableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.sales_table.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sales_tableTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1265,11 +881,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._sales_tableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sales_tableTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1302,15 +913,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._sales_tableTableAdapter != null)) {
-                    revertConnections.Add(this._sales_tableTableAdapter, this._sales_tableTableAdapter.Connection);
-                    this._sales_tableTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._sales_tableTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._sales_tableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sales_tableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sales_tableTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1368,10 +970,6 @@ namespace PHP_SRS_App.sql6410796DataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._sales_tableTableAdapter != null)) {
-                    this._sales_tableTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._sales_tableTableAdapter]));
-                    this._sales_tableTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

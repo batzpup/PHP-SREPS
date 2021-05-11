@@ -62,35 +62,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="phpdatabaseDataSet.cs">
-      <DependentUpon>phpdatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="phpdatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>phpdatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="phpdatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>phpdatabaseDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sql6410796DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sql6410796DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="sql6410796DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="sql6410796DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -105,28 +82,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="phpdatabaseDataSet.xsc">
-      <DependentUpon>phpdatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="phpdatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>phpdatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="phpdatabaseDataSet.xss">
-      <DependentUpon>phpdatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="phpdatabaseDataSet1.xsc">
-      <DependentUpon>phpdatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="phpdatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>phpdatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="phpdatabaseDataSet1.xss">
-      <DependentUpon>phpdatabaseDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,28 +101,6 @@
     </None>
     <None Include="sql6410796DataSet.xss">
       <DependentUpon>sql6410796DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sql6410796DataSet1.xsc">
-      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="sql6410796DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sql6410796DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sql6410796DataSet1.xss">
-      <DependentUpon>sql6410796DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="sql6410796DataSet2.xsc">
-      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="sql6410796DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sql6410796DataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sql6410796DataSet2.xss">
-      <DependentUpon>sql6410796DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
