@@ -73,6 +73,16 @@ namespace PHP_SRS_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sunscreen {
+            get {
+                object obj = ResourceManager.GetObject("sunscreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tissues {
             get {
                 object obj = ResourceManager.GetObject("tissues", resourceCulture);

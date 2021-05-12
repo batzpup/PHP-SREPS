@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 
 
@@ -40,14 +41,20 @@ namespace PHP_SRS_App
         }
         void PopulateDataGridView()
         {
-            using (MySql.Data.MySqlClient.MySqlConnection sqlCon = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
             {
-                sqlCon.Open();
-                Console.WriteLine("hello i connected");
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SELECT * FROM sales_table", sqlCon);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
-                dgvSalesRecord.DataSource = dtbl;
+                try
+                {
+                    sqlCon.Open();
+                    MySqlDataAdapter sqlDa = new MySqlDataAdapter("SELECT * FROM sales_table", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    sqlDa.Fill(dtbl);
+                    dgvSalesRecord.DataSource = dtbl;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -57,22 +64,29 @@ namespace PHP_SRS_App
 
             if (dgvSalesRecord.CurrentRow != null)
             {
-                using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
+                try
                 {
-                    sqlCon.Open();
-                    DataGridViewRow dgvRow = dgvSalesRecord.CurrentRow;
-                    Console.WriteLine(dgvRow);
-                    MySqlCommand sqlCmd = new MySqlCommand("SalesEdit", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    //update
-                    sqlCmd.Parameters.AddWithValue("Order_Number", Convert.ToInt32(dgvRow.Cells["Order_Number"].Value));
-                    sqlCmd.Parameters.AddWithValue("Product_ID", Convert.ToInt32(dgvRow.Cells["Product_ID"].Value));
-                    sqlCmd.Parameters.AddWithValue("Datetime", Convert.ToDateTime(dgvRow.Cells["Datetime"].Value));
-                    sqlCmd.Parameters.AddWithValue("Quantity", Convert.ToInt32(dgvRow.Cells["Quantity"].Value));
-                    sqlCmd.ExecuteNonQuery();
-                    PopulateDataGridView();
+                    using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
+                    {
+                        sqlCon.Open();
+                        DataGridViewRow dgvRow = dgvSalesRecord.CurrentRow;
+                        MySqlCommand sqlCmd = new MySqlCommand("AddEditSale", sqlCon);
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        //update
+                        sqlCmd.Parameters.AddWithValue("p_Order_Number", Convert.ToInt32(dgvRow.Cells["Order_Number"].Value));
+                        sqlCmd.Parameters.AddWithValue("p_Product_ID", Convert.ToInt32(dgvRow.Cells["Product_ID"].Value));
+                        sqlCmd.Parameters.AddWithValue("p_Datetime", Convert.ToDateTime(dgvRow.Cells["Datetime"].Value));
+                        sqlCmd.Parameters.AddWithValue("p_Quantity", Convert.ToInt32(dgvRow.Cells["Quantity"].Value));
+                        sqlCmd.ExecuteNonQuery();
+                        PopulateDataGridView();
 
+                    }
                 }
+                catch 
+                {
+                    MessageBox.Show("You cannot edit a sales that doesnt exist");
+                }
+
             }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,19 +95,17 @@ namespace PHP_SRS_App
             {
 
                 case "sensodyne":
-                    product__imgbx.Image = PHP_SRS_App.Properties.Resources.sensodyne;
+                    product__imgbx.Image = Properties.Resources.sensodyne;
                     break;
                 case "tissues":
-                    product__imgbx.Image = PHP_SRS_App.Properties.Resources.tissues;
+                    product__imgbx.Image = Properties.Resources.tissues;
                     break;
                 case "sunscreen":
-                    product__imgbx.Image = PHP_SRS_App.Properties.Resources.tissues;
+                    product__imgbx.Image = Properties.Resources.sunscreen;
                     break;
-                default:
-                    Console.WriteLine("ChangedComboBox");
-                    MessageBox.Show("Please select a valid product");
-                    break;
+
             }
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,41 +143,66 @@ namespace PHP_SRS_App
         private void button1_Click(object sender, EventArgs e)
         {
 
+            int lastOrderNumber = 0;
 
-             
+
             try
             {
                 using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
                 {
 
+                    string getLastOrder = " SELECT MAX(Order_Number) FROM sales_table;";
+                    string x;
+                    sqlCon.Open();
+                    MySqlCommand cmd = new MySqlCommand(getLastOrder, sqlCon);
+                    x = cmd.ExecuteScalar().ToString();
+                    sqlCon.Close();
+                    lastOrderNumber = Int32.Parse(x);
+                    lastOrderNumber += 1;
+
                     string[] RichTextBoxLines = rTextBox.Lines;
+                    string lastline = RichTextBoxLines.Last();
+
                     foreach (string line in RichTextBoxLines)
                     {
                         MySqlDataReader MyReader;
 
-
-                        string query = "insert into sales_table(Product_ID,Datetime,Quantity) " +
-                            "values(1, NOW()," + this.quantity_msktxtbx.Text + ");";
-
-                        MySqlCommand MyCommand2 = new MySqlCommand(query, sqlCon);
-
-                        sqlCon.Open();
-                        MyReader = MyCommand2.ExecuteReader();  // Here our query will be executed and data saved into the database.  
-                        
-                        while (MyReader.Read())
+                        if (line != lastline)
                         {
+                            string linecopy = line.Clone().ToString();
+
+                            var quantity = Regex.Replace(linecopy.Split()[1], @"[^0-9a-zA-Z\ ]+", "");
+
+                            var output = Regex.Replace(line.Split()[0], @"[^0-9a-zA-Z\ ]+", "");
+                            int product_id = GetProductId(output); //needs revision.
+
+
+                            string query = "insert into sales_table(Order_Number,Product_ID,Datetime,Quantity) " +
+                                "values('" + lastOrderNumber + "','" + product_id + "','" + "NOW()" + "','" + quantity + "');";
+
+
+                            MySqlCommand MyCommand2 = new MySqlCommand(query, sqlCon);
+
+                            sqlCon.Open();
+                            MyReader = MyCommand2.ExecuteReader();  // Here our query will be executed and data saved into the database.  
+
+                            while (MyReader.Read())
+                            {
+                            }
+                            sqlCon.Close();
                         }
-                        sqlCon.Close();
+
                     }
                     MessageBox.Show("Save Data");
 
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
             PopulateDataGridView();
         }
 
@@ -189,14 +226,14 @@ namespace PHP_SRS_App
             }
             else
             {
-                Console.WriteLine("Else Statement Entered");
+
                 if (CartItems.Count != 0)
                 {
                     foreach (CartItem item in CartItems.ToList())
                     {
                         if (item._name == product_cbx.Text)
                         {
-                            Console.WriteLine("I matched a previous product");
+
                             item._quantity = Int32.Parse(quantity_msktxtbx.Text) + item._quantity;
                             found = true;
                             break;
@@ -205,7 +242,7 @@ namespace PHP_SRS_App
                     }
                     if (!found)
                     {
-                        Console.WriteLine("I made a new product");
+
                         CartItems.Add(new CartItem(product_cbx.Text, 10, Int32.Parse(quantity_msktxtbx.Text)));
                     }
                 }
@@ -239,6 +276,32 @@ namespace PHP_SRS_App
             Console.WriteLine("called: dgv_CellEndEdit");
             dgvSalesRecord.BindingContext[dgvSalesRecord.DataSource].EndCurrentEdit();
             dgvSalesRecord_CellValueChanged(sender, e);
+        }
+
+        private int GetProductId(string productname)
+        {
+            int product_id = 0;
+            switch (productname.ToLower())
+            {
+
+                case "sensodyne":
+                    product_id = 1;
+                    break;
+                case "tissues":
+                    product_id = 2;
+                    break;
+                case "sunscreen":
+                    product_id = 3;
+                    break;
+            }
+            Console.WriteLine("Product id: " + product_id);
+            if (product_id == 0)
+            {
+                throw new InvalidOperationException("Product id of 0 is not valid");
+
+            }
+
+            return product_id;
         }
 
     }

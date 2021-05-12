@@ -98,19 +98,21 @@ namespace PHP_SRS_App
             // 
             // quantity_msktxtbx
             // 
+            this.quantity_msktxtbx.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.quantity_msktxtbx.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.quantity_msktxtbx.Location = new System.Drawing.Point(201, 63);
             this.quantity_msktxtbx.Mask = "00000";
             this.quantity_msktxtbx.Name = "quantity_msktxtbx";
             this.quantity_msktxtbx.Size = new System.Drawing.Size(127, 20);
-            this.quantity_msktxtbx.TabIndex = 3;
+            this.quantity_msktxtbx.TabIndex = 0;
             this.quantity_msktxtbx.ValidatingType = typeof(int);
             this.quantity_msktxtbx.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // product__imgbx
             // 
-            this.product__imgbx.Location = new System.Drawing.Point(483, 3);
+            this.product__imgbx.Location = new System.Drawing.Point(474, 17);
             this.product__imgbx.Name = "product__imgbx";
-            this.product__imgbx.Size = new System.Drawing.Size(186, 181);
+            this.product__imgbx.Size = new System.Drawing.Size(207, 225);
             this.product__imgbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.product__imgbx.TabIndex = 4;
             this.product__imgbx.TabStop = false;
@@ -124,9 +126,9 @@ namespace PHP_SRS_App
             this.panel1.Controls.Add(this.add_btn);
             this.panel1.Controls.Add(this.product_cbx);
             this.panel1.Controls.Add(this.quantity_msktxtbx);
-            this.panel1.Location = new System.Drawing.Point(684, 3);
+            this.panel1.Location = new System.Drawing.Point(687, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 239);
+            this.panel1.Size = new System.Drawing.Size(368, 239);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -172,7 +174,6 @@ namespace PHP_SRS_App
             // 
             // dgvSalesRecord
             // 
-            this.dgvSalesRecord.AllowUserToOrderColumns = true;
             this.dgvSalesRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesRecord.Location = new System.Drawing.Point(0, 0);
             this.dgvSalesRecord.Name = "dgvSalesRecord";
