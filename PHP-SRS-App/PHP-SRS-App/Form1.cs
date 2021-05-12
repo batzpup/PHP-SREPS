@@ -144,7 +144,7 @@ namespace PHP_SRS_App
         {
 
             int lastOrderNumber = 0;
-
+            DateTime date = DateTime.Now;
 
             try
             {
@@ -178,8 +178,8 @@ namespace PHP_SRS_App
 
 
                             string query = "insert into sales_table(Order_Number,Product_ID,Datetime,Quantity) " +
-                                "values('" + lastOrderNumber + "','" + product_id + "','" + "NOW()" + "','" + quantity + "');";
-
+                                "values(" + lastOrderNumber + "," + product_id + "," + "NOW()" + "," + quantity + ");";
+                            
 
                             MySqlCommand MyCommand2 = new MySqlCommand(query, sqlCon);
 
